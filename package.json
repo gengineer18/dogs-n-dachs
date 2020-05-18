@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
+    "build": "nuxt-ts build && yarn build:copy:ssr",
+    "build:copy:ssr": "rimraf functions/ssr && mkdirp functions/ssr && cp -R .nuxt/dist functions/ssr/dist",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
     "lint": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore .",
