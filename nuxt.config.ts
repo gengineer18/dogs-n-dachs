@@ -44,7 +44,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/firebase'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -92,6 +92,19 @@ export default {
      ** You can extend webpack config here
      */
     // extend(config, ctx) {}
+    babel: {
+      presets({ isServer }: any) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'),
+            {
+              buildTerget: isServer ? 'server' : 'client',
+              corejs: { version: 3 },
+            },
+          ],
+        ]
+      },
+    },
   },
   typescript: {
     typeCheck: true,
