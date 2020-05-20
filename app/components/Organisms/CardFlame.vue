@@ -1,5 +1,5 @@
 <template>
-  <v-card class="card-flame-wrap">
+  <v-card class="card-flame-wrap" hover>
     <image-with-name :src="post.src" :name="post.name" />
 
     <v-card-actions>
