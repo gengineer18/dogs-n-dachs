@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component :is="buttonHeart" />
+    <component :is="buttonHeart" @emit-count-up="countUp()" />
     {{ counter }}
   </div>
 </template>
@@ -27,6 +27,11 @@ export default Vue.extend({
   computed: {
     buttonHeart(): string {
       return this.counter > 0 ? 'ButtonHeartFill' : 'ButtonHeartOutline'
+    },
+  },
+  methods: {
+    countUp(): void {
+      this.$emit('count-up-heart')
     },
   },
 })

@@ -4,7 +4,9 @@
       <v-container class="page-container">
         <v-row dense>
           <v-col v-for="card of 10" :key="card" cols="6">
-            <card-flame :post="post" />
+            <nuxt-link :to="postLink">
+              <card-flame :post="post" />
+            </nuxt-link>
           </v-col>
         </v-row>
       </v-container>
@@ -27,8 +29,14 @@ export default Vue.extend({
         src:
           'https://firebasestorage.googleapis.com/v0/b/dogs-n-dachs.appspot.com/o/IMG_8254.jpg?alt=media&token=b1fe6015-23c9-4ddf-9809-aaff5c67b42b',
         name: 'ロンロン',
+        id: 'ZQjAKGPYW57mPYipZB0e',
       },
     }
+  },
+  computed: {
+    postLink(): string {
+      return `post/${this.post.id}`
+    },
   },
 })
 </script>
