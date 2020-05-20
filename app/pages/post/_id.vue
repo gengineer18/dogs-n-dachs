@@ -17,6 +17,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { firebase } from '@/plugins/firebase'
 
 const PostFlame = () => import('@/components/Organisms/PostFlame.vue')
 const TheBreadcrumbs = () => import('@/components/Organisms/TheBreadcrumbs.vue')
@@ -26,17 +27,16 @@ export default Vue.extend({
     PostFlame,
     TheBreadcrumbs,
   },
-  data() {
-    return {
-      post: {
-        src:
-          'https://firebasestorage.googleapis.com/v0/b/dogs-n-dachs.appspot.com/o/IMG_8254.jpg?alt=media&token=b1fe6015-23c9-4ddf-9809-aaff5c67b42b',
-        name: 'ロンロン',
-        id: 'ZQjAKGPYW57mPYipZB0e',
-        comment:
-          'コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント',
-      },
-    }
+  async asyncData({ params }) {
+    const db = firebase.firestore()
+    const post = await db
+      .collection('posts')
+      .doc(params.id)
+      .get()
+      .then((doc) => {
+        return doc.data()
+      })
+    return { post }
   },
 })
 </script>
