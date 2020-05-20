@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component :is="buttonStar" />
+    <component :is="buttonStar" @emit-count-up="countUp()" />
     {{ counter }}
   </div>
 </template>
@@ -27,6 +27,11 @@ export default Vue.extend({
   computed: {
     buttonStar(): string {
       return this.counter > 0 ? 'ButtonStarFill' : 'ButtonStarOutline'
+    },
+  },
+  methods: {
+    countUp(): void {
+      this.$emit('count-up-star')
     },
   },
 })
