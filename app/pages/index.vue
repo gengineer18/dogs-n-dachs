@@ -25,7 +25,7 @@ export default Vue.extend({
   },
   async asyncData() {
     const db = firebase.firestore()
-    const posts: any = []
+    const posts: firebase.firestore.DocumentData[] = []
     await db
       .collection('posts')
       .get()
