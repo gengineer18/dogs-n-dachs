@@ -1,9 +1,9 @@
 <template>
   <v-img
     :src="src"
-    class="white--text align-end"
+    class="white--text align-end image-margin"
     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.4)"
-    width="300px"
+    max-width="450px"
   >
     <v-card-title v-text="name"></v-card-title>
   </v-img>
@@ -25,4 +25,8 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.image-margin {
+  margin: 0 auto;
+}
+</style>
