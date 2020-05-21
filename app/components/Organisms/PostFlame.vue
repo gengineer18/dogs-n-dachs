@@ -31,15 +31,26 @@ export default Vue.extend({
   },
   data() {
     return {
-      counterHeart: 0,
-      counterStar: 0,
+      counterHeart: this.post.counterHeart,
+      counterStar: this.post.counterStar,
+      updateFlag: false,
     }
+  },
+  beforeDestroy() {
+    if (!this.updateFlag) return
+    this.$emit('emit-update', {
+      id: this.post.id,
+      counterHeart: this.counterHeart,
+      counterStar: this.counterStar,
+    })
   },
   methods: {
     countUpHeart(): number {
+      this.updateFlag = true
       return this.counterHeart++
     },
     countUpStar(): number {
+      this.updateFlag = true
       return this.counterStar++
     },
   },
