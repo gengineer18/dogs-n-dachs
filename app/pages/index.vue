@@ -5,7 +5,7 @@
         <v-row dense>
           <v-col cols="12">
             <nuxt-link to="/upload">
-              <button-to-upload />
+              <button-for-upload />
             </nuxt-link>
           </v-col>
         </v-row>
@@ -25,12 +25,12 @@
 import Vue from 'vue'
 import { firebase } from '@/plugins/firebase'
 const CardFlame = () => import('@/components/Organisms/CardFlame.vue')
-const ButtonToUpload = () => import('@/components/Atoms/ButtonToUpload.vue')
+const ButtonForUpload = () => import('@/components/Atoms/ButtonForUpload.vue')
 
 export default Vue.extend({
   components: {
     CardFlame,
-    ButtonToUpload,
+    ButtonForUpload,
   },
   async asyncData() {
     const db = firebase.firestore()

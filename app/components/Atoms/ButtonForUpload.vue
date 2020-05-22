@@ -1,7 +1,7 @@
 <template>
   <v-btn block color="brown lighten-1" dark>
     <v-icon left>mdi-dog</v-icon>
-    投稿する
+    シェアする
     <v-icon right>mdi-pen-plus</v-icon>
   </v-btn>
 </template>

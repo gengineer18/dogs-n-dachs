@@ -2,8 +2,10 @@
   <v-layout column justify-center align-center>
     <v-flex>
       <v-container class="page-container">
-        <v-row class="mb-2">
-          <the-breadcrumbs />
+        <v-row dense>
+          <v-col>
+            <the-breadcrumbs />
+          </v-col>
         </v-row>
         <v-row dense>
           <v-col>
@@ -65,6 +67,8 @@ export default Vue.extend({
 
 <style scoped>
 .page-container {
+  width: 90vw;
+  padding: 0;
   max-width: 600px;
 }
 </style>
