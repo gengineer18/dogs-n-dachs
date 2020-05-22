@@ -3,8 +3,8 @@
     <v-flex xs12>
       <v-container class="page-container">
         <v-row dense>
-          <v-col v-for="card of 10" :key="card" cols="6">
-            <nuxt-link :to="postLink">
+          <v-col v-for="post in posts" :key="post.id" cols="6">
+            <nuxt-link :to="postLink(post.id)">
               <card-flame :post="post" />
             </nuxt-link>
           </v-col>
@@ -16,26 +16,31 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
+import { firebase } from '@/plugins/firebase'
 const CardFlame = () => import('@/components/Organisms/CardFlame.vue')
 
 export default Vue.extend({
   components: {
     CardFlame,
   },
-  data() {
-    return {
-      post: {
-        src:
-          'https://firebasestorage.googleapis.com/v0/b/dogs-n-dachs.appspot.com/o/IMG_8254.jpg?alt=media&token=b1fe6015-23c9-4ddf-9809-aaff5c67b42b',
-        name: 'ロンロン',
-        id: 'ZQjAKGPYW57mPYipZB0e',
-      },
-    }
+  async asyncData() {
+    const db = firebase.firestore()
+    const posts: firebase.firestore.DocumentData[] = []
+    await db
+      .collection('posts')
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          posts.push(doc.data())
+        })
+      })
+    return { posts }
   },
   computed: {
-    postLink(): string {
-      return `post/${this.post.id}`
+    postLink() {
+      return function (id: string): string {
+        return `post/${id}`
+      }
     },
   },
 })

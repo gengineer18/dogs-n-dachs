@@ -20,8 +20,7 @@ export default Vue.extend({
   props: {
     counter: {
       type: Number,
-      required: false,
-      default: 0,
+      required: true,
     },
   },
   computed: {

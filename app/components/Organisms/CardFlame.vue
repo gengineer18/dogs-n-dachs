@@ -3,8 +3,8 @@
     <image-with-name :src="post.src" :name="post.name" />
 
     <v-card-actions>
-      <counter-heart />
-      <counter-star />
+      <counter-heart :counter="post.counterHeart" />
+      <counter-star :counter="post.counterStar" />
     </v-card-actions>
   </v-card>
 </template>
