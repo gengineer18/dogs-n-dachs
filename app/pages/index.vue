@@ -1,7 +1,14 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12>
-      <v-container class="page-container">
+      <v-container class="page-container" fluid>
+        <v-row dense>
+          <v-col cols="12">
+            <nuxt-link to="/upload">
+              <button-to-upload />
+            </nuxt-link>
+          </v-col>
+        </v-row>
         <v-row dense>
           <v-col v-for="post in posts" :key="post.id" cols="6">
             <nuxt-link :to="postLink(post.id)">
@@ -18,10 +25,12 @@
 import Vue from 'vue'
 import { firebase } from '@/plugins/firebase'
 const CardFlame = () => import('@/components/Organisms/CardFlame.vue')
+const ButtonToUpload = () => import('@/components/Atoms/ButtonToUpload.vue')
 
 export default Vue.extend({
   components: {
     CardFlame,
+    ButtonToUpload,
   },
   async asyncData() {
     const db = firebase.firestore()
