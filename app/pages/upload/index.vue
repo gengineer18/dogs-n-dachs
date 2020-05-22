@@ -106,7 +106,7 @@ export default Vue.extend({
             db.collection('posts')
               .doc(docId)
               .set(postData, { merge: true })
-              .then(() => this.$router.push('/'))
+              .then(() => this.$router.push('/home'))
           })
       })
     },

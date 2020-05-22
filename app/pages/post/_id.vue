@@ -57,7 +57,6 @@ export default Vue.extend({
   },
   methods: {
     updateLikes(likes: Likes) {
-      console.log('update', likes)
       const likesData = likes
       db.collection('posts').doc(likes.id).set(likesData, { merge: true })
     },
