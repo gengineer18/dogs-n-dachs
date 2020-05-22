@@ -9,7 +9,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: "Dogs 'n' Dachs",
+    title: "Dogs'n'Dachs",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -22,7 +22,7 @@ export default {
       {
         hid: 'og:site_name',
         name: 'og:site_name',
-        content: "Dogs 'n' Dachs",
+        content: "Dogs'n'Dachs",
       },
       // 開発中はクローリングさせない。リリース時に必ず外すこと！！
       {
