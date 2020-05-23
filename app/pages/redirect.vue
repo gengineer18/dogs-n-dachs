@@ -1,5 +1,11 @@
 <template>
-  <p>load</p>
+  <v-container>
+    <v-row align="center" class="redirect-box">
+      <v-col>
+        <p class="text-center">loading...</p>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -20,4 +26,8 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.redirect-box {
+  min-height: 100vh;
+}
+</style>
