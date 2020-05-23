@@ -9,7 +9,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: "Dogs'n'Dachs",
+    title: "Dogs 'n Dachs",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,12 +17,12 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'ダックスが大好きな飼い主さん、ダックスを飼ってみたい方に向けたダックスの写真共有サイトです。自慢のワンちゃんのお写真を共有してみて下さいね！',
+          "Dogs 'n Dachsはダックスが大好きな飼い主さん、ダックスを飼ってみたい方に向けたダックスの写真共有サイトです。自慢のワンちゃんのお写真を共有してみて下さいね！",
       },
       {
         hid: 'og:site_name',
         name: 'og:site_name',
-        content: "Dogs'n'Dachs",
+        content: "Dogs 'n Dachs",
       },
       // 開発中はクローリングさせない。リリース時に必ず外すこと！！
       {
@@ -65,7 +65,13 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxt/typescript-build',
     '@nuxtjs/google-analytics',
+    'nuxt-webfontloader',
   ],
+  webfontloader: {
+    google: {
+      families: ['Lobster:400'],
+    },
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
