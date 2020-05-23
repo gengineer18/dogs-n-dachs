@@ -5,7 +5,7 @@
     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.4)"
     max-width="450px"
   >
-    <v-card-title v-text="name"></v-card-title>
+    <v-card-title class="card-title" v-text="name"></v-card-title>
   </v-img>
 </template>
 
@@ -28,5 +28,10 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .image-margin {
   margin: 0 auto;
+}
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 </style>

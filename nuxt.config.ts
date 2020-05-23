@@ -69,7 +69,7 @@ export default {
   ],
   webfontloader: {
     google: {
-      families: ['Lobster:400'],
+      families: ['Lobster:400', 'M+PLUS+Rounded+1c:wght@500'],
     },
   },
   /*
