@@ -12,7 +12,11 @@ export default {
     title: "Dogs 'n Dachs",
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        name: 'viewport',
+        content:
+          'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no',
+      },
       {
         hid: 'description',
         name: 'description',
@@ -23,12 +27,6 @@ export default {
         hid: 'og:site_name',
         name: 'og:site_name',
         content: "Dogs 'n Dachs",
-      },
-      // 開発中はクローリングさせない。リリース時に必ず外すこと！！
-      {
-        hid: 'robots',
-        name: 'robots',
-        content: 'noindex,nofollow',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -88,7 +86,7 @@ export default {
     },
   },
   googleAnalytics: {
-    id: 'UA-xxxxxxxxx-x',
+    id: 'UA-147111490-4',
   },
   /*
    ** Build configuration

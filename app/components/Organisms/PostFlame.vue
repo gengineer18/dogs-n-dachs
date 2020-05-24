@@ -2,7 +2,8 @@
   <v-card class="post-flame-wrap pa-4">
     <image-with-name :src="post.src" :name="post.name" />
     <v-divider class="mt-4" />
-    <v-card-actions class="pl-0">
+    <v-card-text class="px-2 py-0 mt-2">何回でも❤︎、★を押せるよ！</v-card-text>
+    <v-card-actions class="pa-0">
       <counter-heart :counter="counterHeart" @count-up-heart="countUpHeart()" />
       <counter-star :counter="counterStar" @count-up-star="countUpStar()" />
     </v-card-actions>
